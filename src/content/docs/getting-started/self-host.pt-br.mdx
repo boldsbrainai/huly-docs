@@ -1,0 +1,46 @@
+---
+title: Auto-hospedagem da Huly
+description: Aprenda a obter ajuda com a auto-hospedagem da Huly.
+---
+
+Oferecemos a opção de auto-hospedar a plataforma Huly no seu próprio servidor. Toda a documentação para configurar e manter uma instância auto-hospedada da Huly está disponível em nosso repositório do GitHub <a href="https://github.com/hcengineering/huly-selfhost" target="_blank">huly-selfhost</a>. O README principal do repositório inclui documentação sobre os seguintes tópicos:
+
+* Clonar e configurar o repositório
+* Configurar notificações por e-mail com AWS SES
+* Configurar o Love Service (chamadas de áudio e vídeo)
+* Configurar o serviço de IA
+* Configurar OpenID Connect
+* Configurar autenticação OAuth do GitHub
+* Desabilitar o cadastro
+
+Tudo o que você vê na versão em nuvem pode, potencialmente, ser auto-hospedado; no entanto, por vários motivos, talvez não "pré-empacotemos" alguns serviços. Algumas integrações (como GitHub) podem exigir que você instale um app separado no GitHub ou trabalhe com o Google para habilitar uma API, e não temos documentação extensa para descrever cada caso. Além disso, algumas partes da versão em nuvem dependem de serviços proprietários da Cloudflare, que deliberadamente não incluímos nos pacotes de auto-hospedagem para evitar qualquer dependência de fornecedor. 
+
+## Conectando o aplicativo de desktop ao seu servidor auto-hospedado
+
+Você pode conectar o aplicativo de desktop da Huly ao seu servidor auto-hospedado iniciando-o com a opção `--server` apontando para a URL do seu servidor.
+
+**Windows:**
+1. Clique com o botão direito no atalho da Huly → Propriedades
+2. No campo "Target", adicione `--server https://your-huly-server.com` após o caminho do exe
+3. Exemplo: `"C:\Program Files\Huly\Huly.exe" --server https://your-huly-server.com`
+
+**macOS:**
+```bash
+# Using the app name
+open -a "Huly" --args --server https://your-huly-server.com
+
+# Or using the executable path directly
+/Applications/Huly.app/Contents/MacOS/Huly --server https://your-huly-server.com
+```
+
+## Migrando dados entre auto-hospedagem e nuvem
+
+Não temos uma forma de os usuários migrarem dados de uma instância Huly auto-hospedada para a nossa versão em nuvem por meio da interface gráfica, mas ainda existe uma maneira de exportar/importar manualmente seus dados auto-hospedados para huly.io. Fique à vontade para entrar em contato conosco quando precisar fazer isso, e nós forneceremos orientação e ajuda.
+
+Na direção inversa (migração da nuvem para a auto-hospedagem), se você for proprietário do workspace, pode fazer isso no aplicativo de desktop. No menu, temos a opção `Backup`, que salva o backup do workspace no seu sistema de arquivos. Quando você tiver o backup, poderá restaurá-lo para a versão auto-hospedada.
+
+## Suporte para auto-hospedagem
+
+O suporte para auto-hospedagem é conduzido pela comunidade, e a melhor forma de entrar em contato com outras pessoas que fazem auto-hospedagem é por meio da nossa comunidade no <a href="https://huly.link/slack" target="_blank">Slack</a> no canal `#open-source`. Aqui, você pode fazer perguntas, compartilhar dicas e obter ajuda de outras pessoas que também auto-hospedam a Huly.
+
+Nossa equipe também é ativa na comunidade e fazemos o possível para responder ao maior número possível de perguntas. No entanto, devido às complexidades técnicas da auto-hospedagem e à ampla variedade de fatores que variam entre configurações individuais, talvez não consigamos responder a todas as solicitações de suporte para auto-hospedagem. Por esse motivo, incentivamos os membros da comunidade a se ajudarem sempre que possível e, é claro, recebemos com satisfação qualquer documentação complementar fornecida pela comunidade para adicionar ao nosso repositório.

@@ -1,0 +1,21 @@
+---
+title: O que são Relations?
+description: Aprenda sobre Relations no sistema de Cards.
+---
+
+import { Image } from "astro:assets";
+import cardsRelationsOverview from "../../../../assets/screenshots/huly/cards/cards-relations-overview.png";
+
+<div className="rounded-box">
+  <h5><strong>O que é uma Relation?</strong></h5>
+  <p>Uma Relation define uma conexão entre Cards, vinculando informações em todo o sistema. Relations são criadas entre Types em Settings antes de qualquer Card existir, estabelecendo associações predefinidas. Depois que os Cards são criados, eles podem ser conectados por meio dessas Relations, formando uma base de conhecimento estruturada e interconectada.</p>
+</div>
+
+Relations permitem que você conecte Cards e defina suas interações de uma forma que reflita relações do mundo real. Isso permite que você:
+
+* **Construa redes de dados interconectados** - Relations ajudam a criar uma rede de informações vinculadas, permitindo explorar facilmente como várias entidades se relacionam entre si. Essa interconexão torna possível visualizar sistemas complexos e entender a estrutura da informação.
+* **Otimize a navegação pelos dados** - Relations facilitam a navegação entre Cards associados, tornando mais rápido encontrar informações relevantes.
+
+No nosso exemplo de **design de jogos**, um Card `Character` pode estar relacionado a um Card `Item` que o personagem possui, ou um Card `Game Asset` pode estar relacionado a um `Game Component` para o qual ele é usado.
+
+Para saber como essas relações funcionam na prática, confira nossos guias sobre [Definindo Relations](/cards/relations/defining-relations) e [Relating Cards](/cards/relations/relating-cards).

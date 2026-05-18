@@ -1,0 +1,71 @@
+---
+title: Relations vs. References
+description: Aprenda as diferenças entre Relations e References e os melhores casos de uso para cada uma.
+---
+
+import { Image } from "astro:assets";
+import characterItemRelation from "../../../../assets/screenshots/huly/cards/character-item-relation.png";
+import itemCharacterRelation from "../../../../assets/screenshots/huly/cards/item-character-relation.png";
+import characterItemRefSettings from "../../../../assets/screenshots/huly/cards/character-item-ref-settings.png";
+import characterItemRefCard from "../../../../assets/screenshots/huly/cards/character-item-ref-card.png";
+
+Em alguns casos, você pode querer conectar Cards usando References em vez de Relations.
+
+Relations são bidirecionais, o que significa que uma Relation aparecerá em ambos os Cards envolvidos na relação. No nosso exemplo de um `Character` possuindo um `Item`, a Relation aparecerá tanto no Card `Character` quanto no Card `Item`.
+
+> **Abaixo:** o `Item` é mostrado no Card `Character`
+
+<Image src={characterItemRelation} alt="Card Character" inferSize quality="max" />
+
+> **Abaixo:** o `Character` é mostrado no Card `Item`
+
+<Image src={itemCharacterRelation} alt="Card Item" inferSize quality="max" />
+
+References, por outro lado, são unidirecionais. Uma Reference aparecerá apenas no Card que referencia, e uma Reference é um tipo de atributo. Em vez de usar uma Relation para definir a associação entre `Character` e `Item`, você pode adicionar um atributo de Reference ao Type `Character` que faça referência ao Type `Item`. Isso pode ser um atributo de seleção única ou múltipla, dependendo do seu caso de uso. Nesse caso, o Card `Item` não mostrará qual `Character` o possui.
+
+> **Abaixo:** adicione um atributo de referência ao Type `Character` em Settings
+
+<Image src={characterItemRefSettings} alt="Definindo um atributo de referência em um Type" inferSize quality="max" />
+
+> **Abaixo:** selecione Cards `Item` no Card `Character` usando o atributo de Reference
+
+<Image src={characterItemRefCard} alt="Usando um atributo de referência em um Card" inferSize quality="max" />
+
+## Decidindo se deve usar Relation ou Reference
+
+A decisão entre usar uma Relation ou uma Reference depende do seu caso de uso e de como você gostaria de projetar seu próprio sistema. Aqui estão alguns pontos a considerar em relação à funcionalidade e à apresentação dos seus dados.
+
+> **Nota:** aqui vamos sair do nosso exemplo de design de jogos para ilustrar a diferença entre Relations e References usando um exemplo mais geral de `Person` e `Meeting`. Em breve, Persons na Huly serão substituídos por Cards, permitindo que você gerencie seus contatos em um sistema de banco de dados mais robusto e personalizado. Os exemplos desta seção demonstram as diferenças entre Relations e References em grande escala, considerando um cenário de uma equipe gerenciando milhares de contatos e reuniões.
+
+##### Visibilidade e navegação
+
+Relations ficam visíveis em ambos os Cards, facilitando a navegação entre entidades relacionadas. Essa visibilidade bidirecional é útil quando você quer manter uma conexão clara e recíproca entre duas entidades. Por exemplo, se você tiver uma `Person` relacionada a uma `Meeting`, tanto o Card `Person` quanto o Card `Meeting` mostrarão essa relação, permitindo navegação fácil nos dois sentidos.
+
+##### Escalabilidade
+
+À medida que seu sistema cresce, considere como cada opção vai escalar.
+
+Por exemplo, digamos que você queira criar Cards para **atas de reunião**. Você pode querer criar uma Relation:
+
+- `Meeting` N:N `Person`
+  * **Attended** (`Meeting`) - **Attendees** (`Person`)
+  * *Significado: uma `Meeting` tem **attendees**; uma `Person` participou de `Meetings`.*
+
+Isso pode parecer conveniente no início — você consegue ver todos os attendees na seção Relations de cada Card `Meeting`, e consegue ver quais meetings cada pessoa participou nos Cards `Person`.
+
+No entanto, à medida que o número de meetings cresce, cada `Person` pode acabar com uma quantidade enorme de meetings no seu Card, dificultando a navegação. Nesse caso, uma solução melhor pode ser usar um atributo de Reference no Type `Meeting`; por exemplo:
+
+- **`Meeting Minutes`** (Type)
+  - Date
+  - Topic
+  - Attendees (Reference to `Person`)
+
+Nesse caso, você pode adicionar vários Cards `Person` ao Card `Meeting` sem poluir os próprios Cards `Person`.
+
+##### Ordenação e filtragem
+
+References são um tipo de atributo, então você pode ordenar e filtrar seus Cards com base no valor da Reference. Se você quiser ordenar ou filtrar seus Cards por um atributo específico, considere usar uma Reference em vez de uma Relation. No nosso exemplo de `Person` e `Meeting`, se `Person` for um atributo de Reference no Type `Meeting`, você poderá criar facilmente visualizações filtradas para reuniões frequentadas por diferentes grupos de pessoas.
+
+## Projetando seu próprio sistema de conhecimento
+
+No fim das contas, a forma como você projeta seu sistema depende de você! Existem vantagens e desvantagens em cada tipo de configuração, e não existe uma forma "correta" além daquela que funciona melhor para você.

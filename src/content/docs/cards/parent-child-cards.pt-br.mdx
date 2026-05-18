@@ -1,0 +1,36 @@
+---
+title: Cards pai-filho
+description: Aprenda a criar Cards pai-filho e seus casos de uso.
+---
+
+import { Image } from "astro:assets";
+import parentChildCards from "../../../assets/screenshots/huly/cards/parent-child-cards.png";
+import setParent from "../../../assets/screenshots/huly/cards/set-parent.png";
+
+Cards podem ser conectados por meio de uma relação pai-filho, em que o Card filho é melhor entendido no contexto do seu Card pai. Isso é útil para criar uma estrutura hierárquica de conhecimento e informação.
+
+## Criando um Card filho
+
+Para criar um novo Card filho, clique no botão `+ Create child` no Card pai. Um novo Card em branco será aberto, e você poderá inserir qualquer informação desejada. O Card filho será vinculado automaticamente ao Card pai.
+
+## Conectando Cards existentes como pai-filho
+
+Para conectar um Card existente a um pai, clique com o botão direito no Card na visualização em lista ou tabela, ou abra o menu de configurações na página do Card. Selecione `Set parent` na lista e depois selecione um Card como pai.
+
+<Image src={setParent} alt="Definindo um Card pai" inferSize quality="max" />
+
+## Desconectando Cards pai-filho
+
+Qualquer Card filho pode ser desconectado do seu pai clicando com o botão direito ou abrindo o menu de configurações e selecionando `Unset parent`.
+
+## Cards pai-filho vs. Relations
+
+Embora tanto Relations quanto conexões pai-filho permitam vincular Cards, eles atendem a propósitos diferentes e são usados em cenários distintos.
+
+Aqui estão algumas diretrizes gerais:
+
+* Use relações **pai-filho** quando uma entidade (o "filho") depende de outra entidade (o "pai") e faz sentido lógico que ela fique abaixo dela, ou quando uma estrutura hierárquica é necessária.
+
+* Use **[Relations](/cards/relations/relations-overview)** quando ambas as entidades existem de forma independente, mas precisam ser vinculadas para refletir sua interação ou conexão. Relations não implicam uma estrutura hierárquica, apenas indicam que as entidades estão relacionadas de alguma forma.
+
+<Image src={parentChildCards} alt="Exemplo de Cards pai-filho" inferSize quality="max" />

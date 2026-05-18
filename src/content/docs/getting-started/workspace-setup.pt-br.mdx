@@ -1,0 +1,69 @@
+---
+title: Configurando seu workspace
+description: Aprenda a configurar seu workspace da Huly ou TraceX.
+---
+
+import { YouTube } from 'astro-embed';
+import { Image } from 'astro:assets';
+import settingsModules from '../../../assets/screenshots/huly/settings-modules.png';
+
+## Criando seu primeiro workspace
+
+Quando você cria uma conta na Huly ou no TraceX pela primeira vez, será solicitado que você crie um workspace.
+
+Seu workspace representa o espaço de escritório virtual onde sua equipe trabalhará. Totalmente personalizável para as necessidades exclusivas da sua equipe, o workspace serve como um hub central para comunicação, planejamento de projetos, acompanhamento de tarefas e colaboração.
+
+Dê um ótimo nome ao seu workspace e clique em `Create`.
+
+## Convidando membros da equipe para o seu workspace
+
+Depois que o seu workspace for criado, você poderá convidar membros da equipe para participar.
+
+Selecione o ícone do seu perfil no canto inferior esquerdo da barra lateral. Em seguida, selecione `Invite to workspace`. Selecione `Get invite link` para exibir o link de convite. A partir daí, você pode copiar o link e compartilhá-lo com os membros da sua equipe.
+
+Também é possível convidar novos membros para o workspace adicionando-os diretamente como employees no módulo Contacts. Navegue até Contacts e selecione Employee no menu lateral esquerdo. Clique no botão `+ Employee` e insira o nome e o endereço de e-mail da pessoa que você deseja convidar. Um convite por e-mail será enviado para o endereço informado.
+
+Somente proprietários e mantenedores do workspace podem convidar novos membros ou criar employees.
+
+> **Observação:** Na versão atual da Huly, novos membros não são adicionados automaticamente a projects e teamspaces, a menos que você ative a opção `auto join` desses spaces. Isso ajuda você a manter o controle sobre quem tem acesso aos dados dentro do workspace quando novos membros entram.
+
+##### Configurando as definições de convite
+
+Os links de convite do workspace vêm com algumas configurações padrão. Para configurar essas opções, abra o painel de configurações clicando nas marcas horizontais no canto superior esquerdo da barra lateral. Selecione `Invite settings` no painel de configurações. Aqui, você pode configurar as opções dos convites do seu workspace, incluindo a duração de validade do link, a máscara de e-mail e o limite.
+
+A máscara de e-mail pode ser usada pelo proprietário do workspace para restringir o acesso ao workspace, permitindo apenas usuários com domínios de e-mail específicos. Por exemplo, se você quiser que apenas usuários com endereços de e-mail do domínio da sua empresa possam entrar no workspace, você pode definir a máscara de e-mail como `@yourcompany.com`.
+  
+## Configurações do workspace
+
+Para configurar as definições do workspace, abra o painel de configurações clicando nas marcas horizontais no canto superior esquerdo da barra lateral. As seguintes configurações básicas podem ser definidas:
+
+* **Geral**: Adicione um logotipo personalizado ao seu workspace ou altere o nome do workspace. Aqui, você também pode desativar o RBAC para todo o workspace (útil para testes) ou excluir o workspace completamente.
+* **Backup**: Baixe um backup dos dados do seu workspace.
+* **Owners**: Defina funções para todos os membros da equipe como User, Maintainer ou Owner. Para saber mais sobre funções, consulte [este guia](/advanced-settings/roles). 
+* **Configure**: Ative ou desative módulos no seu workspace. Para saber mais sobre módulos, veja a seção abaixo.
+* **Invite settings**: Configure as definições de convite para o workspace.
+* **Export**: Exporte dados do seu workspace para JSON ou CSV.
+
+## Configurando módulos
+
+Um **módulo** é um conjunto de recursos combinados para fornecer uma funcionalidade específica no seu workspace. Por exemplo, `Tracker`, `Documents` e `Cards` são todos módulos. A Huly e o [TraceX](/getting-started/introduction-tracex) vêm com vários módulos ativados por padrão, mas você pode personalizar seu workspace ativando ou desativando módulos com base nas necessidades da sua equipe.
+
+Para configurar quais módulos estão ativados no seu workspace, navegue até Settings e selecione "Configure" no menu lateral esquerdo. Aqui, você pode ver todos os módulos disponíveis e clicar em `Enable` ou `Disable` para ativá-los ou desativá-los.
+
+<Image 
+    src={settingsModules} 
+    alt='Configurações para configurar módulos' 
+    inferSize
+    quality='max'
+/>
+
+Se você tiver criado dados em um módulo ativado, desativá-lo não excluirá os dados, mas ocultará o módulo da barra lateral. Você pode reativar o módulo a qualquer momento para acessar os dados novamente.
+
+Alguns módulos são rotulados como "Beta version". Isso significa que ainda há alguns recursos sendo desenvolvidos e testados, e que talvez eles ainda não estejam totalmente estáveis. Alguns módulos — como Inventory e Leads — não estão sendo desenvolvidos ativamente e podem não ser priorizados para solicitações de recurso ou correções de bugs.
+
+## Tutoriais em vídeo: como começar a usar Huly e TraceX
+
+A documentação aqui na Huly Docs vai orientar você em tudo o que precisa saber para configurar seu workspace na Huly ou no TraceX. No entanto, se tutoriais em vídeo forem mais o seu estilo, confira nossos guias de início no YouTube:
+
+<YouTube id='g2i_TL5r2k4' posterQuality='max' />
+<YouTube id='https://www.youtube.com/watch?v=bUWr4biucPY' posterQuality='max' />

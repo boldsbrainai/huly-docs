@@ -1,0 +1,79 @@
+---
+title: Criando Cards
+description: Aprenda como criar Cards.
+---
+
+import { Image } from "astro:assets";
+import cardExampleNPC from "../../../assets/screenshots/huly/cards/card-example-npc.png";
+import cardsSpaces from "../../../assets/screenshots/huly/cards/cards-spaces.png";
+
+<div className="rounded-box">
+  <h5><strong>O que é um Card?</strong></h5>
+  <p>Um Card é uma instância de um Type, representando uma informação estruturada específica. Ele segue as propriedades definidas pelo seu Type e pode incluir texto rico, anexos, relations e tags, tornando-se um bloco de construção flexível.</p>
+</div>
+
+Para usar Cards com eficiência na Huly, primeiro é importante entender a relação deles com Types.
+
+Pense em um **Type** como uma planta e em **Cards** como as estruturas construídas a partir dessa planta. Se sua planta define uma "casa" como uma estrutura com quatro janelas e uma porta, então toda casa criada a partir dessa planta sempre terá quatro janelas e uma porta, independentemente da cor ou dos móveis.
+
+Se você ainda não fez isso, confira nosso guia sobre [Criando Types](/cards/types/creating-types) — depois volte aqui para aprender como criar Cards a partir dos Types que você criou.
+
+## Criando um space
+
+Um space é como um contêiner para seus Cards. Você pode definir permissões no nível do space para determinar quem pode acessar os Cards dentro dele.
+
+Para criar um novo space, clique no botão `+ Create Space` no canto superior esquerdo do módulo Cards. Aqui, você pode inserir um nome, selecionar os Types que serão usados nesse space e definir owners, members e configurações de privacidade. Definir o space como "Private" impedirá que qualquer pessoa além dos members listados acesse os Cards desse space.
+
+<Image src={cardsSpaces} alt="Criando um space de Cards" inferSize quality="max" />
+
+Os spaces de Cards funcionam como qualquer outro space na Huly, o que significa que você pode sair, entrar e arquivar spaces, e as funções globais de admin serão aplicadas. Para saber mais sobre como gerenciar permissões no nível do workspace e do space, veja nosso guia sobre [Roles and Permissions](/advanced-settings/roles).
+
+## Criando Cards
+
+Clique em `+ Create Card` no canto superior esquerdo do módulo Cards.
+
+Os elementos a seguir compõem um Card:
+
+1. **Title** - um nome para o seu Card
+2. **Type** - o Type que define as propriedades do seu Card (veja [Criando Types](/cards/types/creating-types))
+4. **Properties** - os detalhes do seu Card, conforme definidos pelo Type
+5. **Rich text editor** - uma área colaborativa de edição de texto que oferece suporte a formatação markdown, imagens, tabelas e muito mais
+6. **Children** - uma área para adicionar Cards filhos (veja [Parent-child Cards](/cards/parent-child-cards))
+7. **Attachments** - uma área para enviar arquivos
+8. **Activity** - um registro de todas as alterações feitas no Card e uma área para comentários
+
+> **Nota:** Cards criados a partir do Type `File` terão uma área adicional acima do editor de texto rico para envio de arquivos. Para saber mais sobre como gerenciar arquivos com o Type `File`, veja [File Types](/cards/types/file-types).
+
+Além desses elementos básicos, Cards também podem incluir:
+
+* **[Relations](/cards/relations/relations-overview)** - conexões com outros Cards
+* **[Tags](/cards/tags/tags-overview)** - propriedades opcionais que podem ser aplicadas a Cards de diferentes tipos
+
+Relations e Tags são definidos no nível do Type. Em outras palavras, quando você quiser criar uma nova Relation ou Tag para um Card, precisará definir isso no Type em Settings. Para ver como, confira estes guias sobre [Definindo Relations](/cards/relations/defining-relations) e [Criando Tags](/cards/tags/creating-tags).
+
+### Exemplo: criando um Card de personagem NPC
+
+Para criar um Card, primeiro certifique-se de que selecionou o Type correto no menu lateral esquerdo e, em seguida, clique no botão `+ Create Card`.
+
+A partir daqui, você pode inserir informações em todos os atributos que definiu no seu Type. Abaixo está um exemplo de um Card para um personagem NPC no nosso **sistema de design de jogos**:
+
+<Image src={cardExampleNPC} alt="Exemplo de um Card NPC" inferSize quality="max" />
+
+Observe que este Card `NPC` tem várias [Relations](/cards/relations/relations-overview), definidas no Type `Character` do qual ele foi derivado:
+* **`Item`** - um `Character` possui `Items`
+* **`Environment`** - um `Character` existe em um `Environment`
+* **`Game Narrative`** - um `Character` está incluído em uma `Game Narrative`
+
+## Adicionando atributos ao Card
+
+Para adicionar um atributo a um Card, basta clicar no ícone `+` ao lado do Type ou Tag que você deseja adicionar. Adicionar um atributo a um Card fará com que o campo seja adicionado a todos os Cards existentes com esse Type ou Tag.
+
+## Saiba mais
+
+Para explorar mais o uso de Cards, confira estes guias:
+
+ * [Relating Cards](/cards/relations/relating-cards) - defina relações estruturadas entre Cards.
+* [File Types](/cards/types/file-types) - gerencie imagens, vídeos, PDFs e outras mídias dentro do Type padrão `File` da Huly.
+* [Tags](/cards/tags/tags-overview) - aplique atributos adicionais a diferentes Types.
+
+Ao entender e estruturar Cards de forma eficaz, você pode criar um sistema de gerenciamento de conhecimento poderoso e flexível na Huly.

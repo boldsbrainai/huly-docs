@@ -1,0 +1,159 @@
+---
+title: Casos de uso para Cards
+description: Aprenda sobre alguns casos de uso comuns para Cards.
+---
+
+Este guia traz exemplos de formas comuns de usar Cards para gerenciamento de conhecimento. Cada exemplo inclui estruturas sugeridas de [Type](/cards/types/types-overview) e [Relations](/cards/relations/relations-overview) que você pode usar como inspiração e adaptar ao seu próprio workspace.
+
+---
+
+## 📚 Explore casos de uso do mundo real
+Cards são uma solução versátil para gerenciar muitos tipos diferentes de conhecimento no seu workspace. Clique em cada seção abaixo para ver um exemplo de Types e Relations para cada caso de uso, com base em sistemas de conhecimento do mundo real. Você verá que alguns desses exemplos também podem ser interconectados, permitindo criar uma rede de conhecimento que abrange todas as áreas da sua organização.
+
+<details>
+<summary><strong>Artigos de base de conhecimento</strong> — crie uma base de conhecimento estruturada para organizar artigos como guias práticos, FAQs e notas de versão.</summary>
+
+##### Types and sub-types
+>Os artigos podem ter muitos formatos, e diferentes tipos de artigo podem ter propriedades diferentes. Aqui estão alguns exemplos de Types que você pode usar em uma base de conhecimento e seus atributos exclusivos:
+
+- **`Knowledge Base Article`**
+  - Summary (string)
+  - Category (select)
+  - Audience (multi-select)
+  - Last updated (date)
+  - Product area (select)
+  - **`How-To Guide`** (Sub-type)
+    - Prerequisites (multi-select)
+    - Estimated time (number)
+  - **`FAQ Entry`** (Sub-type)
+    - Question (string)
+    - Answer (string)
+    - Related topics (multi-select: reference to `Topic` Cards)
+  - **`Release Note`** (Sub-type)
+    - Release version (string)
+    - Release date (date)
+
+##### Relations
+- Related articles (`Knowledge Base Article` ↔ `Knowledge Base Article`)
+- Supports feature (`Knowledge Base Article` → `Product Feature`)
+- Explains concept (`Knowledge Base Article` → `Glossary Term`)
+</details>
+
+<details>
+<summary><strong>Notas de reunião</strong> — acompanhe discussões de reuniões entre equipes.</summary>
+
+##### Types and sub-types
+> Dependendo de quantos tipos diferentes de reunião sua equipe realiza, talvez você queira organizar suas notas de reunião em Types diferentes. Aqui estão alguns exemplos:
+
+- **`Meeting Note`**
+  - Topic (string)
+  - Date (date)
+  - Participants (multi-select: reference to Employees)
+  - Summary (string)
+  - **`Team Meeting`** (Sub-type)
+    - Department (select: reference to `Department` Card)
+    - Recurrence (select: weekly, bi-weekly, monthly)
+  - **`Project Meeting`** (Sub-type)
+    - Related project (reference: `Project` Card)
+
+##### Relations
+> Em alguns casos, você pode querer usar Relations em vez de References para vincular suas notas de reunião. Confira [este guia](/cards/relations/relations-vs-references) para decidir o que é melhor para você! Aqui estão alguns exemplos de Relations que você pode usar:
+- Related to project (`Meeting Note` → `Project`)
+- Related to department (`Meeting Note` → `Department`)
+</details>
+
+<details>
+<summary><strong>Especificações de funcionalidades</strong> — documente planos detalhados para recursos do produto.</summary>
+
+##### Types and sub-types
+
+- **`Feature Spec`**
+  - Feature (string)
+  - Status (select: Draft, Approved, In Development, Released)
+  - Owner (reference: Employee)
+  - **`UI Feature`** (Sub-type)
+    - Screens affected (multi-select)
+    - Design link (url)
+  - **`Backend Feature`** (Sub-type)
+    - API changes required (checkbox)
+    - Data model changes (checkbox)
+
+##### Relations
+- Depends on (`Feature Spec` → `Feature Spec`)
+- Implements (`Feature Spec` → `Product Feature`)
+- Informed by (`Feature Spec` → `Research Summary`)
+</details>
+
+<details>
+<summary><strong>Resumos de pesquisa</strong> — registre descobertas de estudos, entrevistas e experimentos.</summary>
+
+##### Types and sub-types
+
+- **`Research Summary`**
+  - Research method (select: Survey, Interview, Usability Test, Experiment)
+  - Date conducted (date)
+  - Related product area (select)
+  - **`User Interview Summary`** (Sub-type)
+    - Interviewee (reference: Person)
+    - Interviewer (reference: Employee)
+
+##### Relations
+- Informs (`Research Summary` → `Feature Spec`)
+- References (`Research Summary` →`Research Summary`)
+</details>
+
+<details>
+<summary><strong>Documentação de processos</strong> — mapeie fluxos operacionais, procedimentos padrão e playbooks.</summary>
+
+##### Types and sub-types
+
+- **`Process Guide`**
+  - Process name (string)
+  - Trigger event (string)
+  - Owner (reference: Employee)
+  - **`Standard Operating Procedure`** (Sub-type)
+    - Compliance Requirement (select)
+    - Review Cycle (Months) (number)
+  - **`Playbook`** (Sub-Type)
+    - Scenario (string)
+
+##### Relations
+- Related Processes (Process Guide ↔ Process Guide)
+- Supports (Process Guide → Department or Team Card)
+</details>
+
+<details>
+<summary><strong>Planos de campanhas de marketing</strong> — organize briefings, cronogramas e estratégias de campanha em um só lugar.</summary>
+
+##### Types and sub-types
+
+- **`Campaign Plan`**
+  - Campaign name (string)
+  - Objective summary (string)
+  - Launch date (date)
+  - Channels (multi-select: Email, Social, Paid Ads, Web)
+  - Target Audience (multi-select)
+  - **`Product Launch Campaign`** (Sub-type)
+    - Related product (reference: `Product` Card)
+  - **`Seasonal Campaign`** (Sub-type)
+    - Seasonal theme (string)
+
+##### Relations
+> Você pode relacionar uma campanha a um produto por um atributo de referência (no exemplo acima) ou usando uma Relation. Confira [este guia](/cards/relations/relations-vs-references) para decidir o que é melhor para você! Aqui estão alguns exemplos de Relations que você pode usar:
+- Related product (`Campaign Plan` → `Product`)
+- Supported by content items (`Campaign Plan` → `Content`)
+</details>
+
+---
+
+## 💡 Dicas para projetar seu próprio sistema de Cards
+
+Embora seja útil analisar exemplos de casos de uso ao considerar como usar Cards no seu próprio workspace, você é, em última análise, o arquiteto do seu próprio sistema de gerenciamento de conhecimento, e cabe a você decidir como estruturar suas informações. Aqui estão algumas dicas para ajudar você a projetar seu próprio sistema de Cards:
+
+1. **Comece simples:** comece com alguns Types centrais que cubram suas informações mais importantes. Você sempre pode expandir depois, conforme suas necessidades crescerem. Também é possível alterar o Type de um Card depois que ele for criado — então não se preocupe se decidir reorganizar mais tarde!
+
+2. **Mantenha os processos em mente:** se você leu o documento [Introdução aos Cards](/cards/cards-overview), já sabe que estamos construindo atualmente um novo sistema de gerenciamento de processos totalmente baseado em Cards. Você poderá criar processos como funis de leads personalizados, workflows ágeis, sistemas de gerenciamento de clientes e muito mais — tudo a partir de uma base construída com Cards. Se você acha que vai querer aproveitar Cards para seus processos no futuro, sugerimos projetar sua arquitetura de informação levando isso em conta.
+
+3. **Conecte Cards ao restante do seu workspace:** a partir de qualquer Card, você pode criar um atributo de Reference para apontar para qualquer pessoa ou empresa já existente nos seus Contacts. Você também pode vincular Cards de qualquer lugar — inclusive em chats e descrições de issues — usando a sintaxe de @ mention. Experimente!
+
+4. **Procure suporte e inspiração!** junte-se a mais de 3.700 membros na nossa [comunidade no Slack](https://huly.link/slack) para fazer perguntas, compartilhar seus casos de uso e enviar feedback e sugestões de recursos para nossa equipe. Teremos prazer em ajudar você a começar com Cards e adoraríamos trabalhar com você para tornar esse sistema o mais útil possível.

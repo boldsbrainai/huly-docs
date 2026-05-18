@@ -1,0 +1,49 @@
+---
+title: Introdução aos Cards
+description: Aprenda a aproveitar os Cards para gerenciamento avançado de conhecimento.
+---
+import { YouTube } from "astro-embed";
+import { Image } from "astro:assets";
+import cards from "../../../assets/screenshots/huly/cards/cards.png";
+
+<YouTube id="XVdIMinYV0k" posterQuality="max" />
+
+## Entendendo os Cards
+
+Cards são uma estrutura flexível para organizar informações de forma eficiente.
+
+Embora nossa implementação inicial de Cards esteja focada em gerenciamento de conhecimento, Cards também servirão como base para muitos outros recursos da plataforma, incluindo gerenciamento de processos e threads. Com Cards, você poderá criar seus próprios aplicativos personalizados dentro da Huly, como um CRM, um CMS, um sistema de gerenciamento de projetos e muito mais.
+
+Este guia explica os componentes principais do sistema de Cards: **Types**, **Tags**, **Relations** e **Cards**, oferecendo uma visão geral de todo o sistema. Também temos guias mais detalhados sobre cada elemento, para que você aprenda a usá-los no seu próprio workspace; eles estão vinculados nas seções abaixo.
+
+
+## Elementos principais do sistema de Cards
+
+Os elementos a seguir compõem o sistema de Cards. Clique em qualquer guia para saber mais:
+
+* [**Types**](/cards/types/types-overview) definem a estrutura das informações dentro do sistema. Você pode pensar em um Type como um modelo com instruções específicas sobre quais detalhes você precisará armazenar para cada informação.
+* [**Tags**](/cards/tags/tags-overview) são usadas para adicionar propriedades ou comportamentos extras a um Type. Tags permitem definir um conjunto específico de propriedades que pode ser aplicado a vários Types.
+* [**Cards**](/cards/creating-cards) são "instâncias" de um Type — as informações reais que você está armazenando no seu sistema de gerenciamento de conhecimento. Cada Card é uma informação única que segue a estrutura definida pelo seu Type.
+* [**Relations**](/cards/relations/relations-overview) definem as conexões entre diferentes Types e Tags, permitindo que você vincule informações relacionadas usando Cards.
+
+## Usando Cards para gerenciamento de conhecimento
+
+Cards oferecem uma forma estruturada e escalável de organizar conhecimento. Diferentemente dos sistemas tradicionais baseados em documentos, em que as informações podem ficar espalhadas e difíceis de navegar, Cards permitem conexões dinâmicas, filtros e categorização.
+
+Essa abordagem oferece várias vantagens:
+
+* **Organização estruturada** - Cada Card segue um Type definido, garantindo consistência.
+* **Navegação fácil** - As Relations entre Cards criam uma rede de conhecimento interconectada, facilitando encontrar informações associadas.
+* **Escalabilidade** - A natureza modular dos Cards permite expandir seu sistema em escala.
+* **Edição colaborativa** - O editor de texto rico e o rastreamento de atividades permitem que equipes trabalhem juntas de forma colaborativa.
+
+Continue pelos guias para aprender como colocar esses conceitos em prática, criando seu próprio sistema de gerenciamento de conhecimento com Cards.
+
+<div style={{ height: "7px" }}></div>
+
+<div className="rounded-box">
+  <h5><strong>Vamos construir um sistema de design de jogos com Cards! 🎮</strong></h5>
+  <p>Nos próximos guias, veremos como projetar um sistema de jogo de aventura usando Cards. Designers de jogos precisam armazenar informações sobre **componentes do jogo**, **documentos** e **arquivos**, acompanhando como tudo está conectado. Vamos usar este exemplo para mostrar como Cards podem ser usados para criar um sistema abrangente de gerenciamento de conhecimento.</p>
+</div>
+
+<Image src={cards} alt="Visão prévia de Cards" inferSize quality="max" />
