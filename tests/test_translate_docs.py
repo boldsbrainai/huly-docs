@@ -62,6 +62,7 @@ def test_process_file_monkeypatched(tmp_path, monkeypatch):
 # New tests — chunking
 # ---------------------------------------------------------------------------
 
+
 def test_split_into_chunks_by_heading():
     body = (
         "## Introduction\n\nSome intro text.\n\n"
@@ -89,6 +90,7 @@ def test_split_into_chunks_no_split_in_code_block():
 # New tests — build_prompt & glossary
 # ---------------------------------------------------------------------------
 
+
 def test_build_prompt_includes_glossary():
     glossary = {"issue": "issue", "label": "etiqueta"}
     prompt = td.build_prompt("Hello world", glossary)
@@ -106,6 +108,7 @@ def test_build_prompt_no_glossary_table():
 
 def test_load_glossary_returns_dict(tmp_path):
     import json
+
     data = {"feature": "funcionalidade", "build": "build"}
     f = tmp_path / "glossary.json"
     f.write_text(json.dumps(data), encoding="utf-8")
@@ -122,10 +125,13 @@ def test_load_glossary_missing_returns_empty():
 # New tests — translate_chunks_parallel
 # ---------------------------------------------------------------------------
 
+
 def test_translate_chunks_parallel_monkeypatched(monkeypatch):
     call_log = []
 
-    def fake_translate(text, model="translategemma:4b", ollama_url="http://localhost:11434"):
+    def fake_translate(
+        text, model="translategemma:4b", ollama_url="http://localhost:11434"
+    ):
         call_log.append(text)
         return "translated"
 
@@ -145,6 +151,7 @@ def test_translate_chunks_parallel_monkeypatched(monkeypatch):
 # New tests — process_file with chunking path
 # ---------------------------------------------------------------------------
 
+
 def test_process_file_uses_chunks(tmp_path, monkeypatch):
     paragraph = "This is a sentence with several words. " * 20
     body = "\n\n".join([paragraph] * 5)
@@ -153,7 +160,9 @@ def test_process_file_uses_chunks(tmp_path, monkeypatch):
 
     translated_chunks = []
 
-    def fake_translate(text, model="translategemma:4b", ollama_url="http://localhost:11434"):
+    def fake_translate(
+        text, model="translategemma:4b", ollama_url="http://localhost:11434"
+    ):
         translated_chunks.append(text)
         return "Texto traduzido."
 
@@ -170,6 +179,7 @@ def test_process_file_uses_chunks(tmp_path, monkeypatch):
 # New tests — network error handling
 # ---------------------------------------------------------------------------
 
+
 def test_translate_text_url_error(monkeypatch):
     import pytest
     import urllib.error
@@ -179,4 +189,6 @@ def test_translate_text_url_error(monkeypatch):
 
     monkeypatch.setattr(td.urllib.request, "urlopen", mock_urlopen)
     with pytest.raises(RuntimeError, match="Cannot reach ollama"):
-        td.translate_text("hello", model="translategemma:4b", ollama_url="http://localhost:11434")
+        td.translate_text(
+            "hello", model="translategemma:4b", ollama_url="http://localhost:11434"
+        )
