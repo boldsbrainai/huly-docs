@@ -1,0 +1,165 @@
+---
+title: Surveys
+description: Learn about the Surveys module in Huly.
+---
+
+- Preservar blocos de código, links, chaves YAML, URLs e todo o formato.
+- Utilizar linguagem formal em português. Utilize "você", e não "tu". Evitar expressões da região de Portugal.
+- NÃO traduzir: identificadores de código, URLs, chaves de frontmatter YAML, nomes próprios.
+
+Glossário (utilizar essas traduções de forma consistente):
+| Inglês | Português |
+|---------|----------|
+| workspace | espaço de trabalho |
+| feature | funcionalidade |
+| deployment | implantação |
+| workflow | fluxo de trabalho |
+| dashboard | painel |
+| settings | configurações |
+| build | construção |
+| release | versão |
+| repository | repositório |
+| branch | ramo |
+| pull request | solicitação de pull |
+| issue | issue |
+| label | etiqueta |
+| milestone | marco |
+| member | membro |
+| role | função |
+| template | modelo |
+| space | espaço |
+| project | projeto |
+| task | tarefa |
+| action item | item de ação |
+| collaborator | colaborador |
+| notification | notificação |
+| inbox | caixa de entrada |
+| document | documento |
+| draft | rascunho |
+| review | revisão |
+| approval | aprovação |
+| card | cartão |
+| relation | relação |
+| tag | tag |
+| filter | filtro |
+| sort | ordenação |
+| chat | chat |
+| channel | canal |
+| thread | tópico |
+| transcript | transcrição |
+| virtual office | escritório virtual |
+| HR | RH |
+| team planner | planejador de equipe |
+| lead | líder |
+| recruit | recrutamento |
+| survey | pesquisa |
+| training | treinamento |
+| integration | integração |
+| token | token |
+| cache | cache |
+| mobile | móvel |
+| self-hosted | auto-hospedado |
+| enum | enumeração |
+| class | classe |
+| type | tipo |
+| view | visualização |
+| grouping | agrupamento |
+| priority | prioridade |
+| assignee | responsável |
+| due date | data de entrega |
+| component | componente |
+| tracker | rastreador |
+| category | categoria |
+| status | status |
+| active | ativo |
+| archived | arquivado |
+| owner | proprietário |
+| author | autor |
+| editor | editor |
+| viewer | visualizador |
+| comment | comentário |
+| mention | menção |
+| attachment | anexo |
+| emoji | emoji |
+| reaction | reação |
+| contact | contato |
+| employee | funcionário |
+| department | departamento |
+| vacancy | vaga |
+| candidate | candidato |
+| applicant | candidato |
+| interview | entrevista |
+| onboarding | integração de novos membros |
+| quality document | documento de qualidade |
+| controlled document | documento controlado |
+| product | produto |
+| version | versão |
+| drawing board | quadro de desenho |
+| drive | drive |
+| diagram | diagrama |
+| collaborators | colaboradores |
+| permission | permissão |
+| enum value | valor de enumeração |
+| class attribute | atributo de classe |
+| space type | tipo de espaço |
+| task type | tipo de tarefa |
+| text template | modelo de texto |
+| live transcription | transcrição em tempo real |
+| inline comment | comentário inline |
+| related issue | issue relacionada |
+| issue template | modelo de issue |
+| scheduling | agendamento |
+| planner | planejador |
+| test management | gestão de testes |
+| test suite | suíte de testes |
+| test case | caso de teste |
+| test run | execução de testes |
+
+Conteúdo a ser traduzido:
+```
+import { Image } from "astro:assets";
+import surveys from "../../../assets/screenshots/huly/surveys.png";
+
+As pesquisas estão novas no Huly e ainda estão em desenvolvimento experimental. No futuro, você poderá usar as pesquisas para diversos fins, como coletar feedback dos membros da equipe e criar processos de treinamento e integração. Pode haver ainda mais casos de uso para pesquisas no Huly, e bem-vindos são suas ideias ou sugestões nesta fase inicial.
+
+Atualmente, as pesquisas podem ser usadas para:
+
+* Brainstorming de ideias para pesquisas que você pode usar no futuro
+* Elaboração de perguntas para pesquisas para compartilhar com sua equipe para obter feedback
+* Discussão de rascunhos de pesquisas usando a seção de Atividades abaixo da pesquisa
+
+A seguir, um exemplo de uma pesquisa no modo de visualização:
+
+<Image
+  src={surveys}
+  alt="Módulo de Pesquisas"
+  inferSize
+  quality="max"
+/>
+
+## Criando uma pesquisa
+
+Selecione "Formulários de Pesquisa" no menu lateral do módulo de Pesquisa, e clique no botão "+" de Pesquisa no canto superior direito. Insira um título para sua pesquisa e clique em "Criar". Após abrir sua pesquisa, você pode, opcionalmente, adicionar uma descrição abaixo do título.
+
+## Adicionando perguntas
+
+Comece digitando uma pergunta na área de "Perguntas" e pressione Enter. A partir daqui, você pode selecionar o tipo de pergunta que deseja adicionar:
+
+* Resposta simples (campo de texto)
+* Selecionar uma opção (botões de rádio)
+* Selecionar várias opções (caixas de seleção)
+
+Você também pode definir se o campo será obrigatório, e se você deseja permitir uma opção de texto personalizada (disponível apenas para perguntas de seleção única e múltipla).
+
+Na implementação atual, ainda não é possível indicar respostas corretas e incorretas, mas essa funcionalidade será adicionada em uma versão futura.
+
+## Visualizando a pesquisa
+
+Clique no botão "Visualizar" no canto superior direito para ver como sua pesquisa apareceria.
+
+Atualmente, não há opção de compartilhar pesquisas diretamente; no entanto, você pode escolher enviar um link para membros da equipe e ter discussões na seção de Atividades abaixo da pesquisa.
+
+***
+
+Enquanto explora, sinta-se à vontade para compartilhar seu feedback conosco para ajudar a moldar a direção desse recurso para o desenvolvimento futuro! A melhor maneira de entrar em contato conosco é através da nossa [comunidade Slack](https://huly.link/slack).
+```

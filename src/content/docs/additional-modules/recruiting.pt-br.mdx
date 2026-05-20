@@ -1,0 +1,244 @@
+---
+title: Recruiting
+description: Learn how to leverage the recruiting module in Huly to manage job vacancies, applications and talents.
+---
+
+```markdown
+Importe os blocos de código, links, chaves YAML, URLs e toda a formatação.
+Utilize linguagem formal em português do Brasil. Utilize "você", e não "tu". Evite expressões em português de Portugal.
+Não traduza: identificadores de código, URLs, chaves YAML no frontmatter, nomes próprios.
+
+Glossário (utilize essas traduções consistentemente):
+| Inglês | Português |
+|---------|----------|
+| workspace | espaço de trabalho |
+| feature | funcionalidade |
+| deployment | implantação |
+| workflow | fluxo de trabalho |
+| dashboard | painel |
+| settings | configurações |
+| build | build |
+| release | versão |
+| repository | repositório |
+| branch | branch |
+| pull request | solicitação de pull |
+| issue | issue |
+| label | etiqueta |
+| milestone | marco |
+| member | membro |
+| role | função |
+| template | modelo |
+| space | espaço |
+| project | projeto |
+| task | tarefa |
+| action item | item de ação |
+| collaborator | colaborador |
+| notification | notificação |
+| inbox | caixa de entrada |
+| document | documento |
+| draft | rascunho |
+| review | revisão |
+| approval | aprovação |
+| card | cartão |
+| relation | relação |
+| tag | tag |
+| filter | filtro |
+| sort | ordenação |
+| chat | chat |
+| channel | canal |
+| thread | tópico |
+| transcript | transcrição |
+| virtual office | escritório virtual |
+| HR | RH |
+| team planner | planejador de equipe |
+| lead | líder |
+| recruit | recrutamento |
+| survey | pesquisa |
+| training | treinamento |
+| integration | integração |
+| token | token |
+| cache | cache |
+| mobile | móvel |
+| self-hosted | auto-hospedado |
+| enum | enumeração |
+| class | classe |
+| type | tipo |
+| view | visualização |
+| grouping | agrupamento |
+| priority | prioridade |
+| assignee | responsável |
+| due date | data de entrega |
+| component | componente |
+| tracker | rastreador |
+| category | categoria |
+| status | status |
+| active | ativo |
+| archived | arquivado |
+| owner | proprietário |
+| author | autor |
+| editor | editor |
+| viewer | visualizador |
+| comment | comentário |
+| mention | menção |
+| attachment | anexo |
+| emoji | emoji |
+| reaction | reação |
+| contact | contato |
+| employee | funcionário |
+| department | departamento |
+| vacancy | vaga |
+| candidate | candidato |
+| applicant | candidato |
+| interview | entrevista |
+| onboarding | integração de novos membros |
+| quality document | documento de qualidade |
+| controlled document | documento controlado |
+| product | produto |
+| version | versão |
+| drawing board | quadro de desenho |
+| drive | drive |
+| diagram | diagrama |
+| collaborators | colaboradores |
+| permission | permissão |
+| enum value | valor de enumeração |
+| class attribute | atributo de classe |
+| space type | tipo de espaço |
+| task type | tipo de tarefa |
+| text template | modelo de texto |
+| live transcription | transcrição em tempo real |
+| inline comment | comentário inline |
+| related issue | issue relacionada |
+| issue template | modelo de issue |
+| scheduling | agendamento |
+| planner | planejador |
+| test management | gestão de testes |
+| test suite | suíte de testes |
+| test case | caso de teste |
+| test run | execução de testes |
+
+Conteúdo a traduzir:
+import { Image } from "astro:assets";
+import recruitingVacancy from "../../../assets/screenshots/huly/recruiting-vacancy.png";
+import recruitingNewApplication from "../../../assets/screenshots/huly/recruiting-new-application.png";
+import recruitingNewTalent from "../../../assets/screenshots/huly/recruiting-new-talent.png";
+import recruitingConvertTalent from "../../../assets/screenshots/huly/recruiting-convert-talent.png";
+import recruitingSkills from "../../../assets/screenshots/huly/recruiting-skills.png";
+import recruitingApplications from "../../../assets/screenshots/huly/recruiting-applications.png";
+
+O módulo de recrutamento da Huly pode ser usado para gerenciar vagas de emprego, candidaturas e talentos dentro do seu espaço de trabalho. Assim como outros módulos da Huly, o recrutamento está integrado ao restante do seu espaço de trabalho, permitindo que você conecte seus dados de recrutamento ao seu rastreador de tarefas e chats.
+
+> **Observação:** O módulo de recrutamento é desabilitado por padrão para novos espaços de trabalho, pois este conjunto de funcionalidades não é relevante para muitos usuários. Se você gostaria de habilitar o módulo de recrutamento, entre em contato com nossa equipe de suporte através do <a href="https://huly.link/slack" target="_blank">Slack</a>.
+```### Criando vagas
+
+Para criar uma vaga para uma posição de emprego, navegue até "Vagas" na barra lateral esquerda e clique em "+ Vaga" no canto superior direito.
+
+Adicione um título e uma descrição para a vaga. Você também pode adicionar uma data de vencimento, localização (remoto, ou o nome de uma cidade, por exemplo) e quaisquer anexos necessários. Além disso, você pode selecionar os membros que serão responsáveis por gerenciar a vaga. Após concluir, clique em "Criar".### Gerenciando vagas
+
+Após criar uma vaga, você poderá visualizar várias opções adicionais, incluindo:
+
+* **Adição automática** - adiciona automaticamente novos membros ao espaço de trabalho
+* **Empresa** - vincula a vaga a uma empresa
+* **Colaboradores** - os colaboradores receberão notificações relacionadas a qualquer atividade na vaga (saiba mais sobre [colaboradores](/rastreamento-de-tarefas/colaboradores))
+
+Você também encontrará as seguintes seções na página da vaga:
+
+* **Candidaturas** - adicione uma candidatura existente ou crie uma nova.
+* **Pesquisas (em desenvolvimento)** - anexe uma pesquisa existente ou crie uma nova.
+* **Issues relacionadas** - visualize todas as issues do seu Tracker que estão relacionadas à vaga, ou crie uma nova issue relacionada (saiba mais sobre [issues relacionadas](/rastreamento-de-tarefas/issues-relacionadas)).
+* **Atividades** - visualize um registro de todas as atividades relacionadas à vaga.
+
+<Image
+  src={recruitingVacancy}
+  alt="Página da vaga"
+  inferSize
+  quality="máximo"
+/>### Criando talentos e candidaturas
+
+Na Huly, **talentos** são um tipo de contato. Os talentos podem ser vinculados a **vagas** através de **candidaturas**.
+
+Os talentos podem ser criados de 3 formas:
+
+1. Convertendo um contato existente em um talento, criando uma candidatura.
+2. Criando um novo talento no momento da criação da candidatura.
+3. Criando um novo talento a partir do módulo de recrutamento, sem a necessidade de candidaturas.#### 1. Convertendo um contato existente em um talento, criando uma candidatura
+
+Para converter um contato existente em um talento, você precisará criar uma candidatura para essa pessoa. No módulo "**contatos**", navegue até a página do contato, abra o menu de configurações e clique em "Nova candidatura".
+
+<Imagem
+  src={recruitingNewApplication}
+  alt="Criando uma nova candidatura"
+  inferSize
+  quality="max"
+/>
+
+A partir daí, você pode selecionar uma vaga para submeter a candidatura. Você pode escolher um recrutador responsável, definir um status para a candidatura e indicar uma data de início, se aplicável. Se você optar por adicionar uma descrição, esta aparecerá como um comentário na página da candidatura.
+
+<Imagem
+  src={recruitingConvertTalent}
+  alt="Convertendo um contato em um talento"
+  inferSize
+  quality="max"
+/>
+
+Após criar a candidatura, você notará que a etiqueta "Talento" foi aplicada ao contato. Você verá que a página de contato dessa pessoa foi expandida para incluir várias seções de perfil adicionais.#### 2. Criando um novo talento ao criar uma candidatura
+
+Se você ainda não tiver um contato para um talento, poderá criar um contato para ele ao mesmo tempo em que cria sua candidatura.
+
+No módulo de **recrutamento**, navegue para qualquer página de vaga e clique no botão `+` na seção "Candidaturas". Clique no bloco para o talento no lado esquerdo, em seguida, clique no `+` para criar um novo talento.
+
+Preencha os detalhes do talento, como nome, cargo, localização, links de mídia social, disponibilidade presencial ou remota, e currículo. Você também poderá selecionar habilidades a partir do menu suspenso (mais informações sobre habilidades abaixo). Clique em "Criar".
+
+<Image
+  src={recruitingNewTalent}
+  alt="Criando um novo talento"
+  inferSize
+  quality="max"
+/>
+
+Agora, se você navegar de volta para o seu módulo de **contatos**, verá que um contato foi adicionado com a etiqueta "Talento".#### 3. Criando um novo talento a partir do módulo de recrutamento
+
+É possível criar um novo talento sem anexar nenhuma candidatura. No módulo de **recrutamento**, selecione "Talentos" na barra lateral esquerda e clique em "+ Talento" no canto superior direito.
+
+Neste momento, você verá os mesmos campos para criar um talento. Clique em "Criar" e observe que seu talento aparece tanto no módulo de **recrutamento** *quanto* no módulo de **contatos**.## Gerenciando talentos
+
+A página de detalhes do talento é diferente de uma página de contato típica, pois inclui seções adicionais para "Candidaturas", "Habilidades", "Avaliações" e "Pesquisas", além das seções de página de contato "Anexos", "Issues Relacionadas" e "Atividade". Em conjunto, todas essas seções permitem que você acompanhe tudo o que precisa em relação aos talentos dentro do módulo de recrutamento.
+
+Vamos dar uma olhada em cada uma dessas seções:### Aplicações
+
+Aqui estão listadas todas as aplicações enviadas para uma vaga. Aqui, você pode visualizar o número da aplicação, o nome da vaga, a empresa, o estado e comentários. Você também pode adicionar uma nova aplicação usando o botão "+".### Habilidades
+
+As habilidades podem ser usadas para filtrar, ordenar e pesquisar entre os talentos, além de fornecer uma visão geral rápida das habilidades do talento ao visualizar sua página de contato.
+
+Você pode adicionar habilidades clicando no botão `+`. Se já tiver criado habilidades, pode pesquisá-las ou selecioná-las do menu suspenso. Para criar uma nova habilidade, clique em `+`. Forneça um título e uma descrição (opcional) e uma cor para a habilidade, e selecione a categoria do menu suspenso. Em seguida, clique em "Criar".
+
+<Image
+  src={recruitingSkills}
+  alt="Criando uma habilidade"
+  inferSize
+  quality="max"
+/>
+
+As habilidades podem ser gerenciadas selecionando "Habilidades" no painel lateral esquerdo. Aqui, você pode filtrar, editar e excluir habilidades.### Avaliações
+
+As avaliações são utilizadas para agendar a avaliação de uma candidatura. Para criar uma avaliação, clique em `+` e insira um título, local (opcional) e descrição para a avaliação. Você também pode inserir a empresa, a candidatura e os participantes, e selecionar uma data para a avaliação. Em seguida, clique em "Criar".
+
+Após criar a avaliação, você pode encontrar campos adicionais para adicionar notas à avaliação. O mais importante, você pode inserir uma "Decisão" na avaliação para indicar uma impressão geral.### Pesquisas
+
+As pesquisas ainda estão em desenvolvimento. Verifique em breve para obter mais informações!### Gerenciando aplicações
+
+As aplicações podem ser gerenciadas de forma semelhante ao acompanhamento de tarefas. Selecione as visualizações de lista ou Kanban, filtre por status e ordene por qualquer coluna.
+
+<Imagem
+  src={recruitingApplications}
+  alt="Visualização de lista de aplicações"
+  inferSize
+  quality="max"
+/>
+
+Cada aplicação também possui várias seções úteis na página de detalhes. Você pode encontrar seções para `Revisões de todos os talentos`, `Anexos`, `Pesquisas`, `Issues relacionadas` e `Atividades`, que podem ser utilizadas para adicionar informações e conectar a outras partes do workspace.### Personalizando propriedades para vagas, candidaturas e talentos
+
+Você pode adicionar quaisquer propriedades adicionais que necessite para suas vagas, candidaturas e perfis de talentos. Por exemplo, talvez deseje incluir uma faixa salarial ou uma data de início desejada para uma vaga, ou um método de contato preferido para um talento.
+
+Para adicionar suas próprias propriedades personalizadas, navegue para as configurações do seu espaço de trabalho e selecione `Classes` no painel lateral esquerdo. Em seguida, selecione a classe que deseja personalizar.
+
+A partir daqui, você pode adicionar quaisquer propriedades que desejar. Para obter mais informações sobre como adicionar propriedades a classes, consulte [Classes e enumerações](/configurações-avançadas/classes-enumerações).

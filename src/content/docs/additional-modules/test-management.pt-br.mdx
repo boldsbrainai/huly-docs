@@ -1,0 +1,160 @@
+---
+title: Test management
+description: Learn how to create, manage and run tests in Huly.
+---
+
+- Mantenha os blocos de código, links, chaves YAML, URLs e todas as formatações.
+- Utilize uma linguagem formal em português. Utilize "você", e não "tu". Evite expressões em português de Portugal.
+- NÃO traduza: identificadores de código, URLs, chaves YAML de frontmatter, nomes próprios.
+
+Glossário (use estas traduções consistentemente):
+| Inglês | Português |
+|---------|----------|
+| workspace | espaço de trabalho |
+| feature | funcionalidade |
+| deployment | implantação |
+| workflow | fluxo de trabalho |
+| dashboard | painel |
+| settings | configurações |
+| build | build |
+| release | versão |
+| repository | repositório |
+| branch | branch |
+| pull request | solicitação de pull |
+| issue | problema |
+| label | etiqueta |
+| milestone | marco |
+| member | membro |
+| role | função |
+| template | modelo |
+| space | espaço |
+| project | projeto |
+| task | tarefa |
+| action item | item de ação |
+| collaborator | colaborador |
+| notification | notificação |
+| inbox | caixa de entrada |
+| document | documento |
+| draft | rascunho |
+| review | revisão |
+| approval | aprovação |
+| card | cartão |
+| relation | relação |
+| tag | tag |
+| filter | filtro |
+| sort | ordenação |
+| chat | chat |
+| channel | canal |
+| thread | tópico |
+| transcript | transcrição |
+| virtual office | escritório virtual |
+| HR | RH |
+| team planner | planejador de equipe |
+| lead | líder |
+| recruit | recrutamento |
+| survey | pesquisa |
+| training | treinamento |
+| integration | integração |
+| token | token |
+| cache | cache |
+| mobile | móvel |
+| self-hosted | auto-hospedado |
+| enum | enumeração |
+| class | classe |
+| type | tipo |
+| view | visualização |
+| grouping | agrupamento |
+| priority | prioridade |
+| assignee | responsável |
+| due date | data de conclusão |
+| component | componente |
+| tracker | rastreador |
+| category | categoria |
+| status | status |
+| active | ativo |
+| archived | arquivado |
+| owner | proprietário |
+| author | autor |
+| editor | editor |
+| viewer | visualizador |
+| comment | comentário |
+| mention | menção |
+| attachment | anexo |
+| emoji | emoji |
+| reaction | reação |
+| contact | contato |
+| employee | funcionário |
+| department | departamento |
+| vacancy | vaga |
+| candidate | candidato |
+| applicant | candidato |
+| interview | entrevista |
+| onboarding | integração de novos membros |
+| quality document | documento de qualidade |
+| controlled document | documento controlado |
+| product | produto |
+| version | versão |
+| drawing board | quadro de desenho |
+| drive | drive |
+| diagram | diagrama |
+| collaborators | colaboradores |
+| permission | permissão |
+| enum value | valor de enumeração |
+| class attribute | atributo de classe |
+| space type | tipo de espaço |
+| task type | tipo de tarefa |
+| text template | modelo de texto |
+| live transcription | transcrição em tempo real |
+| inline comment | comentário inline |
+| related issue | problema relacionado |
+| issue template | modelo de problema |
+| scheduling | agendamento |
+| planner | planejador |
+| test management | gestão de testes |
+| test suite | suíte de testes |
+| test case | caso de teste |
+| test run | execução de testes |
+
+Conteúdo a ser traduzido:
+import { YouTube } from "astro-embed";
+import { Image } from 'astro:assets';
+import newTestRun from '../../../assets/screenshots/huly/test-management-new-test-run.png';
+import testRunResult from '../../../assets/screenshots/huly/test-management-test-run-result.png';
+
+O módulo de gestão de testes da Huly permite que você crie, organize e execute testes de forma eficiente dentro do seu espaço de trabalho. Com este módulo, você pode rastrear os status dos testes, visualizar os resultados, vincular os testes a problemas no Tracker e gerar tickets de trabalho para os responsáveis.
+
+<YouTube id="-p39H4jOSjI" posterQuality="max" />
+
+## Configurando testes
+
+Clique no botão `+` na barra lateral esquerda para iniciar um novo projeto de teste. Por enquanto, os projetos de teste estão isolados dentro do módulo de gestão de testes; no entanto, existem planos para conectar a gestão de testes com outros projetos do espaço de trabalho no futuro próximo.
+
+### Criando uma suíte de testes
+Abra o menu suspenso no canto superior esquerdo e selecione `Criar suíte de testes`. Forneça um nome e uma descrição opcional para sua suíte de testes.
+
+### Criando um caso de teste
+Dentro de sua suíte de testes, adicione casos de teste clicando em `+ Novo caso de teste`. Insira um nome e uma descrição opcional para o seu caso de teste. Selecione um status (por exemplo, "Pronto", "Em andamento"), e anexe quaisquer arquivos ou imagens relevantes. Em seguida, clique em `Criar`.
+
+### Executando testes
+
+Use as caixas de seleção ao lado de cada caso de teste para escolher quais incluir na execução de testes. Em seguida, clique em `Executar`.
+
+Forneça um título e uma descrição para a sua execução de testes. Sua execução de testes pode incluir detalhes como a configuração do ambiente, instruções de execução e resultados esperados.
+
+<Image 
+src={newTestRun} 
+alt='Diálogo para inserir detalhes para nova execução de teste' 
+inferSize
+quality='max'
+/>
+
+Uma vez que o teste tenha sido executado, você pode alterar o status de `Não testado` para `Aprovado`, `Falhou` ou `Bloqueado`, e adicionar um responsável para revisão.
+
+<Image 
+src={testRunResult} 
+alt='Exemplo de resultado de execução de teste' 
+inferSize
+quality='max'
+/>
+
+Você também verá uma seção de Atividade onde poderá ter discussões, vincular a problemas e documentos, e adicionar anexos.

@@ -1,0 +1,175 @@
+---
+title: Leads
+description: Learn about the Leads module in Huly.
+---
+
+- Mantenha os blocos de código, links, chaves YAML, URLs e todo o formato.
+- Utilize uma linguagem formal em português. Utilize "você", e não "tu". Evite expressões em português de Portugal.
+- NÃO traduza: identificadores de código, URLs, chaves YAML de frontmatter, nomes próprios.
+
+Glossário (utilize estas traduções consistentemente):
+| Inglês | Português |
+|---------|----------|
+| workspace | espaço de trabalho |
+| feature | funcionalidade |
+| deployment | implantação |
+| workflow | fluxo de trabalho |
+| dashboard | painel |
+| settings | configurações |
+| build | build |
+| release | versão |
+| repository | repositório |
+| branch | branch |
+| pull request | solicitação de pull |
+| issue | issue |
+| label | etiqueta |
+| milestone | marco |
+| member | membro |
+| role | função |
+| template | modelo |
+| space | espaço |
+| project | projeto |
+| task | tarefa |
+| action item | item de ação |
+| collaborator | colaborador |
+| notification | notificação |
+| inbox | caixa de entrada |
+| document | documento |
+| draft | rascunho |
+| review | revisão |
+| approval | aprovação |
+| card | cartão |
+| relation | relação |
+| tag | tag |
+| filter | filtro |
+| sort | ordenação |
+| chat | chat |
+| channel | canal |
+| thread | tópico |
+| transcript | transcrição |
+| virtual office | escritório virtual |
+| HR | RH |
+| team planner | planejador de equipe |
+| lead | lead |
+| recruit | recrutamento |
+| survey | pesquisa |
+| training | treinamento |
+| integration | integração |
+| token | token |
+| cache | cache |
+| mobile | mobile |
+| self-hosted | auto-hospedado |
+| enum | enumeração |
+| class | classe |
+| type | tipo |
+| view | visualização |
+| grouping | agrupamento |
+| priority | prioridade |
+| assignee | responsável |
+| due date | data de entrega |
+| component | componente |
+| tracker | rastreador |
+| category | categoria |
+| status | status |
+| active | ativo |
+| archived | arquivado |
+| owner | proprietário |
+| author | autor |
+| editor | editor |
+| viewer | visualizador |
+| comment | comentário |
+| mention | menção |
+| attachment | anexo |
+| emoji | emoji |
+| reaction | reação |
+| contact | contato |
+| employee | funcionário |
+| department | departamento |
+| vacancy | vaga |
+| candidate | candidato |
+| applicant | candidato |
+| interview | entrevista |
+| onboarding | integração de novos membros |
+| quality document | documento de qualidade |
+| controlled document | documento controlado |
+| product | produto |
+| version | versão |
+| drawing board | quadro de desenho |
+| drive | drive |
+| diagram | diagrama |
+| collaborators | colaboradores |
+| permission | permissão |
+| enum value | valor de enumeração |
+| class attribute | atributo de classe |
+| space type | tipo de espaço |
+| task type | tipo de tarefa |
+| text template | modelo de texto |
+| live transcription | transcrição em tempo real |
+| inline comment | comentário inline |
+| related issue | issue relacionada |
+| issue template | modelo de issue |
+| scheduling | agendamento |
+| planner | planejador |
+| test management | gestão de testes |
+| test suite | suíte de testes |
+| test case | caso de teste |
+| test run | execução de testes |
+
+Conteúdo a ser traduzido:
+import { Image } from "astro:assets";
+import leads from "../../../assets/screenshots/huly/leads.png";
+import leadsFunnelSettings from "../../../assets/screenshots/huly/leads-funnel-settings.png";
+import leadsNewFunnel from "../../../assets/screenshots/huly/leads-new-funnel.png";
+
+O módulo "Leads" da Huly está quase desativado e está desativado por padrão para novos espaços de trabalho. Estamos planejando introduzir um módulo CRM mais poderoso e completo em breve, e, nesse ínterim, recomendamos fortemente que você aguarde o lançamento do novo módulo para aproveitar suas capacidades aprimoradas. Não temos um prazo específico para o lançamento do novo módulo, mas bem-vindo qualquer feedback em estágios iniciais para usuários interessados em utilizar essas funcionalidades no futuro.
+
+Se você tiver interesse, e desejar explorar o módulo "Leads" existente, podemos habilitá-lo manualmente para o seu espaço de trabalho - basta entrar em contato com nossa equipe de suporte através do <a href="https://huly.link/slack" target="_blank">Slack</a>.
+
+**Nota:** Embora seja permitido explorar o módulo "Leads" como está, por favor, tenha em mente que, devido à desativação do módulo, problemas ou relatórios de bugs relacionados não serão priorizados em relação a outras áreas da Huly, e correções e melhorias não são garantidas. Com isso em mente, sinta-se à vontade para compartilhar qualquer feedback que você tenha para nos ajudar a planejar nosso novo módulo CRM.## Configurando funis
+
+Os funis podem ser usados para acompanhar o progresso de leads por meio de uma série de etapas. Para configurar um funil básico com etapas predefinidas, navegue para o módulo "Leads" na barra lateral esquerda e clique em "Funis". Clique em `+ Funil` para criar um novo funil. Aqui, você pode inserir um nome para o funil, ativar ou desativar as configurações de privacidade e selecionar os proprietários e membros que devem ter acesso ao espaço. Em seguida, clique em "Criar".
+
+Por padrão, os funis terão as seguintes etapas: `Backlog`, `Entrada`, `Negociação`, `Preparação da proposta`, `Tomar a decisão` e `Conclusão do contrato`. Você pode editar essas etapas ou criar novas etapas nas configurações.## Personalizando as etapas do funil
+
+Navegue até as Configurações e encontre o `Funil Padrão` no menu `TIPOS DE ESPAÇO` na barra lateral esquerda. Na parte inferior, você verá uma área rotulada `TIPOS DE TAREFA`. Clique em `Lead`. A partir daqui, você pode editar, adicionar ou remover etapas.
+
+<Imagem
+  src={leadsFunnelSettings}
+  alt="Configurações para funis"
+  inferSize
+  quality="max"
+/>
+
+Para criar um conjunto totalmente novo de etapas (útil ao gerenciar diferentes tipos de funis), clique no botão `+` ao lado de `TIPOS DE ESPAÇO` e selecione `Leads` no menu suspenso. Insira um nome para o seu tipo de espaço de funil e clique em `Criar`. Em seguida, você pode editar as etapas da mesma forma que acima.
+
+> **Observação:** Para saber mais sobre a criação e o gerenciamento de espaços, consulte nosso guia sobre [tipos de espaços](/configurações-avançadas/tipos-de-espaços).
+
+Para usar suas etapas de funil personalizadas, selecione seu tipo de espaço de funil no menu suspenso `Tipo de Projeto` ao criar seu funil.
+
+<Imagem
+  src={leadsNewFunnel}
+  alt="Criando um novo funil"
+  inferSize
+  quality="max"
+/>## Criando e gerenciando leads
+
+Para criar um lead, navegue até o módulo de Leads na barra lateral esquerda e clique em `+ Lead` no canto superior direito.
+
+Insira um nome para o lead e selecione um cliente. "Clientes" são qualquer pessoa nos seus contatos no workspace — isso pode ser uma empresa, uma pessoa ou até mesmo um membro interno do workspace. Se você não tiver um contato para o seu lead, poderá criá-lo clicando no botão `+` no menu suspenso. Opcionalmente, insira um título (descrição curta ou etiqueta) e um responsável, e selecione uma fase para o lead. Em seguida, clique em `Criar`.
+
+Na página do seu lead, você verá várias opções adicionais, incluindo data de entrega, etiquetas, anexos, issues relacionadas e atividades. É aqui que você pode armazenar todas as informações e discussões relacionadas a esse lead. Adicionar uma issue relacionada é uma ótima maneira de acompanhar tarefas relacionadas ao seu lead, como chamadas de acompanhamento, elaboração de propostas e negociações.
+
+À medida que o lead avança no funil, basta atualizar o status (fase) do lead na própria página do lead, ou clicando no status do lead na visualização em lista.
+
+Assim como as issues no seu rastreador, os leads podem ser filtrados, agrupados e ordenados por fase e responsável, e podem ser visualizados em visualizações de lista, Kanban ou painel.
+
+<Image
+  src={leads}
+  alt="Visualização de lista de leads"
+  inferSize
+  quality="max"
+/>## Criando e gerenciando clientes
+
+Como mencionado acima, os "Clientes" são qualquer contato presente no seu espaço de trabalho – isso pode ser uma empresa, uma pessoa ou até mesmo um membro interno do espaço de trabalho. Você pode acessar esses contatos facilmente, diretamente do módulo de "Leads", clicando em "Clientes" na barra lateral esquerda. Nesta visualização, você pode visualizar os leads associados a cada cliente, bem como seus outros detalhes e comentários.
+
+Para criar um novo cliente, clique em "+ Cliente" no canto superior esquerdo. Selecione o tipo (Pessoa ou Empresa) no menu suspenso, insira um nome e quaisquer outros detalhes, e clique em "Criar". A partir daqui, você pode abrir a página de contato e adicionar informações adicionais, incluindo uma descrição mais detalhada, anexos, issues relacionados e comentários. Você também pode adicionar leads ao cliente nesta página, clicando no botão "+" na seção "Leads".
